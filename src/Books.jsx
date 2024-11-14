@@ -9,6 +9,26 @@ export const Books = () => {
   const [rangeValue, setRangeValue] = useState(220);
   const [genreValue, setGenreValue] = useState('Todos');
   const [availableBooks, setAvailableBooks] = useState(0);
+  const [selectedBooks, setSelectedBooks] = useState([]);
+
+  // Función para manejar el toggle de libros
+  const handleToggleBook = (book) => {
+    if (
+      selectedBooks.some(
+        (selectedBook) => selectedBook.book.ISBN === book.book.ISBN
+      )
+    ) {
+      // Remover de los libros seleccionados
+      setSelectedBooks(
+        selectedBooks.filter(
+          (selectedBook) => selectedBook.book.ISBN !== book.book.ISBN
+        )
+      );
+    } else {
+      // Agregar a los libros seleccionados
+      setSelectedBooks([...selectedBooks, book]);
+    }
+  };
 
   return (
     <>
@@ -25,10 +45,15 @@ export const Books = () => {
             rangeValue={rangeValue}
             genreValue={genreValue}
             setAvailableBooks={setAvailableBooks}
+            selectedBooks={selectedBooks}
+            handleToggleBook={handleToggleBook}
           />
         </div>
         <div className='flex flex-col justify-around items-center w-full bg-gray-500 rounded-xl'>
-          <ReadingList />
+          <ReadingList
+            selectedBooks={selectedBooks}
+            handleToggleBook={handleToggleBook}
+          />
         </div>
       </div>
       <Footer />

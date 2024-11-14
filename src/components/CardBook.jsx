@@ -1,13 +1,4 @@
-import { useState } from 'react';
-
-export const CardBook = ({ book }) => {
-  const [toggleButton, setToggleButton] = useState(true);
-
-  console.log(book);
-  const handleToggle = () => {
-    setToggleButton(!toggleButton);
-  };
-
+export const CardBook = ({ book, toggleButton, handleToggle }) => {
   return (
     <div className='w-48 h-auto relative'>
       <img
