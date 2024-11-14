@@ -13,7 +13,7 @@ export const Main = ({
 }) => {
   const [toggleButton, setToggleButton] = useState(true);
 
-  const books = useFetch('/src/data/books.json');
+  const books = useFetch('/books-lists/src/data/books.json');
 
   const numBooksPages = books.filter((book) => {
     if (
