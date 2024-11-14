@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         Sour: ['Sour Gummy', 'sans-serif'],
       },
+      height: {
+        'new-screen': 'calc(100vh - 41px)',
+      },
     },
   },
   plugins: [],

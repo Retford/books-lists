@@ -4,8 +4,10 @@ import { CardBook } from '../components/CardBook';
 export const ReadingList = ({ selectedBooks, handleToggleBook }) => {
   return (
     <>
-      <h2 className='text-5xl text-center pt-4'>Lista de Lectura</h2>
-      <div className='flex flex-wrap items-center justify-center w-full gap-8 max-h-[650px] overflow-x-hidden overflow-y-scroll my-6'>
+      <h2 className='text-3xl sm:text-5xl text-center pt-4'>
+        Lista de Lectura
+      </h2>
+      <div className='flex flex-wrap sm:flex-row flex-col items-center justify-center overflow-x-scroll overflow-y-hidden w-full gap-8 max-h-[650px] sm:overflow-x-hidden sm:overflow-y-scroll my-6'>
         {selectedBooks.map((book) => (
           <CardBook
             key={book.book.ISBN}

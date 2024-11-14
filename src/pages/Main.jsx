@@ -40,7 +40,7 @@ export const Main = ({
   }, [numBooksPages, availableBooks]);
 
   return (
-    <div className='flex flex-wrap items-center justify-center w-full gap-8  max-h-[650px] overflow-x-hidden overflow-y-scroll my-6'>
+    <div className='flex items-center justify-center flex-wrap overflow-y-hidden overflow-x-scroll flex-col w-full gap-8  max-h-[650px] sm:flex-row sm:overflow-x-hidden sm:overflow-y-scroll my-6'>
       {availableBooks.map((book) => (
         <CardBook
           key={book.book.ISBN}

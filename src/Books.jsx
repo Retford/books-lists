@@ -33,8 +33,8 @@ export const Books = () => {
 
   return (
     <>
-      <div className='grid grid-cols-3 place-content-center gap-8 h-screen bg-black text-white p-4 font-Sour'>
-        <div className='flex flex-col justify-center items-center w-full col-span-2'>
+      <div className='flex flex-col justify-center items-center lg:grid lg:grid-cols-3 lg:place-content-center lg:h-new-screen gap-8 bg-black text-white p-4 font-Sour'>
+        <div className='flex h-[650px] flex-col justify-center items-center w-full sm:max-h-[700px] col-span-2'>
           <Header availableBooks={availableBooks} readBooks={readBooks} />
           <Navbar
             rangeValue={rangeValue}
@@ -51,7 +51,7 @@ export const Books = () => {
             handleToggleBook={handleToggleBook}
           />
         </div>
-        <div className='flex flex-col justify-around items-center w-full bg-gray-500 rounded-xl'>
+        <div className='flex px-4 h-[400px] flex-col justify-between sm:justify-around items-center w-full sm:max-h-[700px] bg-gray-500 rounded-xl lg:h-[650px] lg:justify-start'>
           <ReadingList
             selectedBooks={selectedBooks}
             handleToggleBook={handleToggleBook}
