@@ -7,6 +7,7 @@ export const Main = ({
   rangeValue,
   genreValue,
   setAvailableBooks,
+  setReadBooks,
   selectedBooks,
   handleToggleBook,
 }) => {
@@ -23,12 +24,6 @@ export const Main = ({
     return book;
   });
 
-  // Change Available Books
-  useEffect(() => {
-    setAvailableBooks(numBooksPages.length);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [numBooksPages]);
-
   // Filtrar los libros que no están seleccionados
   const availableBooks = numBooksPages.filter(
     (book) =>
@@ -36,6 +31,13 @@ export const Main = ({
         (selectedBook) => selectedBook.book.ISBN === book.book.ISBN
       )
   );
+
+  // Change Available Books
+  useEffect(() => {
+    setAvailableBooks(availableBooks.length);
+    setReadBooks(selectedBooks.length);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [numBooksPages, availableBooks]);
 
   return (
     <div className='flex flex-wrap items-center justify-center w-full gap-8  max-h-[650px] overflow-x-hidden overflow-y-scroll my-6'>

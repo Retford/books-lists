@@ -9,6 +9,7 @@ export const Books = () => {
   const [rangeValue, setRangeValue] = useState(220);
   const [genreValue, setGenreValue] = useState('Todos');
   const [availableBooks, setAvailableBooks] = useState(0);
+  const [readBooks, setReadBooks] = useState(0);
   const [selectedBooks, setSelectedBooks] = useState([]);
 
   // Función para manejar el toggle de libros
@@ -34,7 +35,7 @@ export const Books = () => {
     <>
       <div className='grid grid-cols-3 place-content-center gap-8 h-screen bg-black text-white p-4 font-Sour'>
         <div className='flex flex-col justify-center items-center w-full col-span-2'>
-          <Header availableBooks={availableBooks} />
+          <Header availableBooks={availableBooks} readBooks={readBooks} />
           <Navbar
             rangeValue={rangeValue}
             setRangeValue={setRangeValue}
@@ -45,6 +46,7 @@ export const Books = () => {
             rangeValue={rangeValue}
             genreValue={genreValue}
             setAvailableBooks={setAvailableBooks}
+            setReadBooks={setReadBooks}
             selectedBooks={selectedBooks}
             handleToggleBook={handleToggleBook}
           />
