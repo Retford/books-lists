@@ -14,7 +14,7 @@ export const Navbar = ({
   const handleChangeSelect = (e) => {
     setGenreValue(e.target.value);
   };
-  const books = useFetch('../data/books.json');
+  const books = useFetch('/books-lists/data/books.json');
 
   const allGenresBooks = books.map((book) => book.book.genre);
 

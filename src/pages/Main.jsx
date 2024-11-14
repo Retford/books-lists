@@ -13,15 +13,16 @@ export const Main = ({
 }) => {
   const [toggleButton, setToggleButton] = useState(true);
 
-  const books = useFetch('../data/books.json');
+  const books = useFetch('/books-lists/data/books.json');
 
   const numBooksPages = books.filter((book) => {
     if (
       book.book.pages > rangeValue ||
       (book.book.genre !== genreValue && genreValue !== 'Todos')
-    )
+    ) {
       return false;
-    return book;
+    }
+    return true;
   });
 
   // Filtrar los libros que no están seleccionados
