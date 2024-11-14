@@ -1,4 +1,9 @@
-export const CardBook = ({ book, toggleButton, setToggleButton }) => {
+import { useState } from 'react';
+
+export const CardBook = ({ book }) => {
+  const [toggleButton, setToggleButton] = useState(true);
+
+  console.log(book);
   const handleToggle = () => {
     setToggleButton(!toggleButton);
   };

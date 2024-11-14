@@ -1,7 +1,7 @@
 import { CardBook } from '../components/CardBook';
 import { useFetch } from '../fetch/dataFetch';
 
-export const ReadingList = ({ toggleButton, setToggleButton }) => {
+export const ReadingList = () => {
   // const books = useFetch('/src/data/books.json');
 
   const booksMock = [
@@ -29,12 +29,7 @@ export const ReadingList = ({ toggleButton, setToggleButton }) => {
       <h2 className='text-5xl text-center pt-4'>Lista de Lectura</h2>
       <div className='flex flex-wrap items-center justify-center w-full gap-8  max-h-[650px] overflow-x-hidden overflow-y-scroll my-6'>
         {booksMock.map((book) => (
-          <CardBook
-            key={book.book.ISBN}
-            {...book}
-            toggleButton={toggleButton}
-            setToggleButton={setToggleButton}
-          />
+          <CardBook key={book.book.ISBN} {...book} />
         ))}
       </div>
     </>

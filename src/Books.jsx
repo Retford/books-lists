@@ -9,7 +9,6 @@ export const Books = () => {
   const [rangeValue, setRangeValue] = useState(220);
   const [genreValue, setGenreValue] = useState('Todos');
   const [availableBooks, setAvailableBooks] = useState(0);
-  const [toggleButton, setToggleButton] = useState(true);
 
   return (
     <>
@@ -26,15 +25,10 @@ export const Books = () => {
             rangeValue={rangeValue}
             genreValue={genreValue}
             setAvailableBooks={setAvailableBooks}
-            toggleButton={toggleButton}
-            setToggleButton={setToggleButton}
           />
         </div>
         <div className='flex flex-col justify-around items-center w-full bg-gray-500 rounded-xl'>
-          <ReadingList
-            toggleButton={toggleButton}
-            setToggleButton={setToggleButton}
-          />
+          <ReadingList />
         </div>
       </div>
       <Footer />
