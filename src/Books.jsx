@@ -8,7 +8,7 @@ import { ReadingList } from './pages/ReadingList';
 export const Books = () => {
   const [rangeValue, setRangeValue] = useState(220);
   const [genreValue, setGenreValue] = useState('Todos');
-  const [availableBooks, setAvailableBooks] = useState(0);
+  const [availableBooksLength, setAvailableBooksLength] = useState(0);
   const [readBooks, setReadBooks] = useState(0);
   const [selectedBooks, setSelectedBooks] = useState([]);
 
@@ -35,7 +35,10 @@ export const Books = () => {
     <>
       <div className='flex flex-col justify-center items-center lg:grid lg:grid-cols-3 lg:place-content-center lg:h-new-screen gap-8 bg-black text-white p-4 font-Sour'>
         <div className='flex h-[650px] flex-col justify-center items-center w-full sm:max-h-[700px] col-span-2'>
-          <Header availableBooks={availableBooks} readBooks={readBooks} />
+          <Header
+            availableBooksLength={availableBooksLength}
+            readBooks={readBooks}
+          />
           <Navbar
             rangeValue={rangeValue}
             setRangeValue={setRangeValue}
@@ -45,7 +48,7 @@ export const Books = () => {
           <Main
             rangeValue={rangeValue}
             genreValue={genreValue}
-            setAvailableBooks={setAvailableBooks}
+            setAvailableBooksLength={setAvailableBooksLength}
             setReadBooks={setReadBooks}
             selectedBooks={selectedBooks}
             handleToggleBook={handleToggleBook}

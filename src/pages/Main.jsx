@@ -6,7 +6,7 @@ import { useFetch } from '../fetch/dataFetch';
 export const Main = ({
   rangeValue,
   genreValue,
-  setAvailableBooks,
+  setAvailableBooksLength,
   setReadBooks,
   selectedBooks,
   handleToggleBook,
@@ -35,7 +35,7 @@ export const Main = ({
 
   // Change Available Books
   useEffect(() => {
-    setAvailableBooks(availableBooks.length);
+    setAvailableBooksLength(availableBooks.length);
     setReadBooks(selectedBooks.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [numBooksPages, availableBooks]);
